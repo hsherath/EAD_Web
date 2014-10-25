@@ -6,7 +6,7 @@ USE EAD_DEMO;
 GO
 
 CREATE TABLE users(
-	userid int identity primary key not null
+	userid int identity primary key not null,
 	login_name varchar(50) not null,
 	firstname varchar(50) not null,
 	lastname varchar(50) not null,
