@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Web.Configuration;
 
 namespace EAD_Web.Code
 {
@@ -16,8 +16,8 @@ namespace EAD_Web.Code
 
         public static SqlConnection GetSQLConnection()
         {
-        
-            String connectionString=ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+
+            String connectionString = WebConfigurationManager.ConnectionStrings["EAD_Web.Properties.Settings.DBConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }

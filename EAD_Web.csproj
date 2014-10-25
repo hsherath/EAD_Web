@@ -52,6 +52,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="FindUser.aspx" />
     <Content Include="SQL_Scripts\ead_sql_query_make_db.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindUser.aspx.cs">
+      <DependentUpon>FindUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindUser.aspx.designer.cs">
+      <DependentUpon>FindUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
