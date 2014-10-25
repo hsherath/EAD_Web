@@ -28,9 +28,9 @@ namespace EAD_Web.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WIN-1FS0IOJAKOE\\SQLEXPRESS;Initial Catalog=EAD_DEMO;Integrated Securi" +
             "ty=True")]
-        public string Setting {
+        public string DBConnectionString {
             get {
-                return ((string)(this["Setting"]));
+                return ((string)(this["DBConnectionString"]));
             }
         }
     }
