@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EAD_Web.Code;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace EAD_Web
 {
