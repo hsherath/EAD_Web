@@ -26,8 +26,8 @@ namespace EAD_Web.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN-HP\\SQLEXPRESS;Initial Catalog=itplab;User ID=sliit;Password=sli" +
-            "it123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN-HP\\SQLEXPRESS;Initial Catalog=projectComp;User ID=sliit;Passwor" +
+            "d=***********")]
         public string DBConnectionString {
             get {
                 return ((string)(this["DBConnectionString"]));

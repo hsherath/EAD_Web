@@ -5,9 +5,9 @@
     <Setting Name="DBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=ADMIN-HP\SQLEXPRESS;Initial Catalog=itplab;User ID=sliit;Password=sliit123&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=ADMIN-HP\SQLEXPRESS;Initial Catalog=projectComp;User ID=sliit;Password=***********&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=ADMIN-HP\SQLEXPRESS;Initial Catalog=itplab;User ID=sliit;Password=sliit123</Value>
+      <Value Profile="(Default)">Data Source=ADMIN-HP\SQLEXPRESS;Initial Catalog=projectComp;User ID=sliit;Password=***********</Value>
     </Setting>
   </Settings>
 </SettingsFile>
