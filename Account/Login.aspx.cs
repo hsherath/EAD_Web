@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EAD_Web.Code;
 using System.Data.SqlClient;
+using EAD_Web.Account;
 
 namespace EAD_Web.Account
 {
@@ -19,8 +20,23 @@ namespace EAD_Web.Account
         protected void btnLogin_Click(object sender, EventArgs e)
         {
 
-            SqlConnection dbConnection = DBManager.GetSQLConnection();
+
+            LoginManager lm = new LoginManager();
+
+            String username, password;
+
+            username = txtUsername.Text;
+            password = txtPassword.Text;
+
+            if (lm.Login(username, password)) //If login is successfull, set the cookies
+            {
+                HttpCookie loginCookie = new HttpCookie("loginInfo");
+                loginCookie.Values["username"] = username;
+                Response.SetCookie(loginCookie);
+            }
 
         }
+
+       
     }
 }

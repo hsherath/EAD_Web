@@ -28,7 +28,7 @@ namespace EAD_Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HeadLoginStatus;
+        protected global::System.Web.UI.WebControls.LinkButton HeadLoginStatus;
         
         /// <summary>
         /// MainContent control.

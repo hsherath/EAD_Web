@@ -17,11 +17,7 @@
                    Employee Management System
                 </h1>
             </div>
-            <div class="loginDisplay">
-               
-                        <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> 
-                   
-            </div>
+            
             <div class="clear hideSkiplink">
               
             </div>
