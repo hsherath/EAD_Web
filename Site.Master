@@ -29,7 +29,9 @@
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home" >
                     </asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/FindUser.aspx" Text="Find User" Value="Find User">
+                    <asp:MenuItem NavigateUrl="~/AddUser.aspx" Text="Add Employee" Value="Add Employee">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/FindUser.aspx" Text="Find Employee" Value="Find Employee">
                     </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" Value="About">
                     </asp:MenuItem>
