@@ -24,13 +24,19 @@ namespace EAD_Web
             if (!inputText.Equals(""))
             {
                 SqlConnection con = DBManager.GetSQLConnection();
-                String query = "SELECT firstname,lastname,email,primary_address FROM EAD_DEMO WHERE firstname='"+inputText+"'";
+                con.Open();
+                String query = "SELECT firstname,lastname,email,primary_address FROM users WHERE firstname='"+inputText+"' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.CommandType = CommandType.Text;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+                con.Close();
+                GridView1.Visible = true;
             }
-            else { 
-                //show error message
+            else {
+
+                msgLabel.Text="Please Enter First Name";
             }
         }
 
