@@ -1,14 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddUser.aspx.cs" Inherits="EAD_Web.AddUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddUser.aspx.cs" Inherits="EAD_Web.Add_User_New" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+<form>
+     <div>
         <table style="width: 100%;">
             <tr>
                 <td>
@@ -95,11 +91,12 @@
                     Position</td>
                 
                 <td>
-                    <asp:ListBox ID="ListBox1" runat="server">
+                    <asp:DropDownList ID="DropDownList1" runat="server">
                         <asp:ListItem>Manager</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                    </asp:ListBox>
+                        <asp:ListItem>Software Engineer</asp:ListItem>
+                        <asp:ListItem>Developer</asp:ListItem>
+                        <asp:ListItem>QA Engineer</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
                 <td>
                     <asp:Label ID="msgPosition" runat="server" Text=""></asp:Label></td>
@@ -139,17 +136,16 @@
             </tr>
 
             <tr> <td></td></tr>
-            <tr> <td></td></tr>
 
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Submit" onclick="Button1_Click" 
+                    <asp:Button ID="Button1" runat="server" Text="Submit" 
                         Width="62px" /></td>
                 <td></td>
             </tr>
         </table>
     </div>
-    </form>
-</body>
-</html>
+</form>
+
+</asp:Content>

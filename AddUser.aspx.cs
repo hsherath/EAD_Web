@@ -7,16 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace EAD_Web
 {
-    public partial class AddUser : System.Web.UI.Page
+    public partial class Add_User_New : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-           // string fname = 
-        }
+        
     }
 }
