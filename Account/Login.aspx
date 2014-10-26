@@ -10,7 +10,7 @@
     <p>
         Please enter your username and password.
        
-      <form  runat=server>
+      
       <fieldset class="login">
       <label>Username</label>
       <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
@@ -28,6 +28,6 @@
               onclick="btnLogin_Click"/>
           
       </fieldset>
-      </form>
+    
       
 </asp:Content>
