@@ -9,21 +9,16 @@ namespace EAD_Web.Account
 {
     public class LoginManager
     {
-        public bool isLoggedIn(HttpCookie loginCookie)
+        public bool isLoggedIn(HttpResponse response)
         {
 
             bool loggedIn = false;
-
-            if (loginCookie != null)
+            String username = response.Cookies["loginInfo"].Value;
+            if (username.Length!=0)
             {
-                if (loginCookie["username"] != null)
-                {
+               
                     loggedIn = true;
-                }
-                else
-                {
-                    loggedIn = false;
-                }
+              
             }
             else
             {
@@ -52,6 +47,7 @@ namespace EAD_Web.Account
 
                 if (reader.HasRows)
                 {
+                    reader.Read();
                     userid = Convert.ToInt32(reader["userid"].ToString());
                     if (userid >= 0)
                     {
@@ -70,7 +66,7 @@ namespace EAD_Web.Account
             catch (Exception ex)
             {
 
-                throw;
+               String message= ex.Message;
             }
 
             return loginDone;

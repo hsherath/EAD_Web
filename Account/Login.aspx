@@ -9,18 +9,19 @@
     </h2>
     <p>
         Please enter your username and password.
-       
-      
+       <br />
+       <br />
+        <asp:Label ID="loginError" runat="server" ForeColor="Red" ></asp:Label>
       <fieldset class="login">
       <label>Username</label>
-      <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+      <asp:TextBox ID="txtUsername" runat="server" ViewStateMode="Enabled"></asp:TextBox>
       
           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
               ErrorMessage="Username can not be empty" ControlToValidate="txtUsername" 
               ForeColor="Red"></asp:RequiredFieldValidator>
       
       <label >Password</label>
-          <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+          <asp:TextBox ID="txtPassword" runat="server" ViewStateMode="Disabled" TextMode="Password"></asp:TextBox>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
               ErrorMessage="Password can not be empty" ControlToValidate="txtPassword" 
               ForeColor="Red"></asp:RequiredFieldValidator>

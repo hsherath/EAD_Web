@@ -31,8 +31,21 @@ namespace EAD_Web.Account
             if (lm.Login(username, password)) //If login is successfull, set the cookies
             {
                 HttpCookie loginCookie = new HttpCookie("loginInfo");
-                loginCookie.Values["username"] = username;
+                loginCookie.Value = username;
                 Response.SetCookie(loginCookie);
+                if (!Request.Url.Equals(Request.UrlReferrer))//do not redirect to login page if refer is itself
+                {
+                    Response.Redirect(Request.UrlReferrer.AbsoluteUri);
+                }
+                else
+                {
+                    Response.RedirectPermanent("~/Default.aspx", true);
+                }
+            }
+            else
+            {
+                txtPassword.Text = "";
+                loginError.Text = "Invalid username or password";
             }
 
         }
