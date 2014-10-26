@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using EAD_Web.Code;
 using System.Data.SqlClient;
 using System.Data;
+using EAD_Web.Account;
+using EAD_Web.Code;
+using System.Data;
 
 namespace EAD_Web
 {
@@ -14,6 +17,39 @@ namespace EAD_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LoginManager lm = new LoginManager();
+
+            if (!lm.isLoggedIn(Response.Cookies["loginInfo"]))
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
+            else 
+            {
+                if (Request.Cookies["loginInfo"] != null)
+                {
+                    string userName = Request.Cookies["loginInfo"]["username"];
+
+                    string query = "SELECT position from users WHERE position = '" + userName+ "'";
+
+                    SqlConnection con = DBManager.GetSQLConnection();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query,con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    String position = null;
+
+                    while (reader.Read()) {
+                        position = reader["position"].ToString();
+                    }
+
+                    con.Close();
+
+                    if (!position.ToLower().Equals("manager")) 
+                    {
+                        Response.Redirect("~/ErrorPage.aspx");
+                    }
+                }
+            }
 
         }
 
