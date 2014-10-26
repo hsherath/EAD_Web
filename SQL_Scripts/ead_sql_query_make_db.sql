@@ -20,3 +20,18 @@ CREATE TABLE users(
 );
 GO
 
+insert into users values('chathura','Chathura','Madushan','chathura@gmail.com','password','892530440V','50000','Manager','Panadura','12345');
+
+insert into users values('harindra','Harindra','Herath','harindra@gmail.com','pass123','822530440V','60000','Software Engineer','Kurunagala','67891');
+
+insert into users values('ishak','Ishak','Ahamed','ishak@gmail.com','pass@123','902530440V','40000','Designer','Nawalapitiya','344435');
+
+
+insert into users values('saman','Saman','De Silva','saman@gmail.com','pass@@123','892330440V','20000','QA Engineer','Colombo','232145');
+
+insert into users values('kamal','Kamal','Sampath','kamal@gmail.com','abcd123','902530440V','30000','Developer','Mathale','111222');
+
+insert into users values('nimal','Nimal','Perera','nimal@gmail.com','1234','902670440V','10000','Associate Software Engineer','Galle','554435');
+
+
+
