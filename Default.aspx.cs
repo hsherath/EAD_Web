@@ -12,7 +12,7 @@ namespace EAD_Web
         protected void Page_Load(object sender, EventArgs e)
         {
             LoginManager lm = new LoginManager();
-            if (!lm.isLoggedIn((System.Web.HttpResponse)Response))
+            if (!lm.isLoggedIn(Session))
             {
                 Response.Redirect("~/Account/Login.aspx");
             }

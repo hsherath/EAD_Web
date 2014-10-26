@@ -4,17 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using EAD_Web.Code;
+using System.Web.SessionState;
 
 namespace EAD_Web.Account
 {
     public class LoginManager
     {
-        public bool isLoggedIn(HttpResponse response)
+        public bool isLoggedIn(HttpSessionState session)
         {
 
             bool loggedIn = false;
-            String username = response.Cookies["loginInfo"].Value;
-            if (username.Length!=0)
+            String username = "";
+            if(session["username"] !=null)
+            username = session["username"].ToString();
+            if ((username.Length>0))
             {
                
                     loggedIn = true;
@@ -72,9 +75,9 @@ namespace EAD_Web.Account
             return loginDone;
         }
 
-       public void LogOut(HttpResponse response)
+       public void LogOut(HttpSessionState session)
        {
-           response.Cookies.Clear();
+           session.Abandon();
        }
     }
 }

@@ -19,7 +19,7 @@ namespace EAD_Web
         {
             LoginManager lm = new LoginManager();
 
-            if (!lm.isLoggedIn(Response.Cookies["loginInfo"]))
+            if (!lm.isLoggedIn(Session))
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
