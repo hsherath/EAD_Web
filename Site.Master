@@ -6,6 +6,7 @@
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -18,18 +19,26 @@
                    Employee Management System
                 </h1>
             </div>
+            <div style="float:right;width:100px;margin-top:15px;margin-right:10px;">
+                <asp:Button ID="loginButton" runat="server" Text="Button" 
+                    onclick="loginButton_Click" />
+            </div>
+           
             <div class="menu clear">
             <asp:Menu ID="Menu1" runat="server" CssClass="block" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home" >
                     </asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/FindUser.aspx" Text="Find User" Value="Find User">
+                    <asp:MenuItem NavigateUrl="~/AddUser.aspx" Text="Add Employee" Value="Add Employee">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/FindUser.aspx" Text="Find Employee" Value="Find Employee">
                     </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" Value="About">
                     </asp:MenuItem>
                 </Items>
             
                 </asp:Menu>
+                
             </div>
             <div class="clear hideSkiplink">
                 
