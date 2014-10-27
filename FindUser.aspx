@@ -16,16 +16,11 @@
     <br />
     <br />
     <div style="margin-left: 80px">
+
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" 
             Width="531px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <Columns>
-                <asp:BoundField DataField="firstname" HeaderText="First Name" />
-                <asp:BoundField DataField="lastname" HeaderText="Last Name" />
-                <asp:BoundField DataField="email" HeaderText="Email" />
-                <asp:BoundField DataField="primary_address" HeaderText="Address" />
-            </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -37,6 +32,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+
     </div>
     <br />
 

@@ -141,7 +141,7 @@
                 <td></td>
                 <td>
                     <asp:Button ID="Button1" runat="server" Text="Submit" 
-                        Width="62px" /></td>
+                        Width="62px" onclick="Button1_Click" /></td>
                 <td></td>
             </tr>
         </table>
