@@ -26,11 +26,11 @@ namespace EAD_Web
             }
             else 
             {
-                if (Request.Cookies["loginInfo"] != null)
-                {
-                    string userName = Request.Cookies["loginInfo"].Value;
+               
+                
+                    string userName = Session["username"].ToString();
 
-                    string query = "SELECT position from users WHERE position = '" + userName+ "'";
+                    string query = "SELECT position from users WHERE login_name = '" + userName+ "'";
 
                     SqlConnection con = DBManager.GetSQLConnection();
                     con.Open();
@@ -50,7 +50,7 @@ namespace EAD_Web
                         Response.Redirect("~/ErrorPage.aspx");
                     }
                 }
-            }
+            
 
         }
 
@@ -72,47 +72,33 @@ namespace EAD_Web
                 int columnNo = reader.FieldCount;
 
                 DataTable table = new DataTable();
+                table.Columns.Add("First Name", typeof(string));
+                table.Columns.Add("Last Name", typeof(string));
+                table.Columns.Add("Email", typeof(string));
+                table.Columns.Add("Address", typeof(string));
 
-                for (int k = 0; k < columnNo; k++) 
-                {
-                    switch (k) 
-                    {
-                        case 0: table.Columns.Add("First Name", typeof(string));
-                                break;
-
-                        case 1: table.Columns.Add("Last Name", typeof(string));
-                                break;
-
-                        case 2: table.Columns.Add("Email", typeof(string));
-                                break;
-
-                        case 3: table.Columns.Add("Address", typeof(string));
-                                break;
-
-                        default: table.Columns.Add("Column " + k, typeof(string));
-                                 break;
-                    }
-                }
 
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        DataRow row = table.NewRow();
-
-                        for (int i = 0; i < columnNo; i++)
+                    do{
+                        while (reader.Read())
                         {
-                            row[i] = reader.GetString(i);
+                            DataRow row = table.NewRow();
+                            columnNo = reader.FieldCount;
+                            for (int i = 0; i < columnNo; i++)
+                            {
+                                row[i] = reader[i].ToString();
+                            }
+
+                            table.Rows.Add(row);
                         }
+                    }while(reader.NextResult());
 
-                        table.Rows.Add(row);
-
-                    }
-
+                    GridView1.Visible = true;
                     GridView1.DataSource = table;
                     GridView1.DataBind();
                     con.Close();
-                    GridView1.Visible = true;
+                   
 
                 }
                 else 
@@ -126,8 +112,9 @@ namespace EAD_Web
                 msgLabel.Text="Please Enter First Name";
                 GridView1.Visible = false;
             }
+            }
         }
 
-      
+
     }
-}
+

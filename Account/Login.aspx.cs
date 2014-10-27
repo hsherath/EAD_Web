@@ -30,7 +30,25 @@ namespace EAD_Web.Account
 
             if (lm.Login(username, password)) //If login is successfull, set the cookies
             {
-                
+                SqlConnection con=DBManager.GetSQLConnection();
+                SqlCommand cmd = new SqlCommand("Select login_name from users where login_name='" + username +
+                    "' OR email='" + username + "';", con);
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        username = reader["login_name"].ToString();
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    String aa = ex.Message;
+                }
                 Session.Add("username", username);
                
                 if (!Request.Url.Equals(Request.UrlReferrer))//do not redirect to login page if refer is itself

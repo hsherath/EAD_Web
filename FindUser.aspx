@@ -17,8 +17,8 @@
     <br />
     <div style="margin-left: 80px">
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-            Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" 
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" 
+            CellPadding="4" ForeColor="#333333" GridLines="None" 
             Width="531px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <EditRowStyle BackColor="#999999" />
