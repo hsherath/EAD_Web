@@ -19,7 +19,7 @@ namespace EAD_Web
         {
             LoginManager lm = new LoginManager();
 
-            if (!lm.isLoggedIn(Response.Cookies["loginInfo"]))
+            if (!lm.isLoggedIn(Response))
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
@@ -27,7 +27,7 @@ namespace EAD_Web
             {
                 if (Request.Cookies["loginInfo"] != null)
                 {
-                    string userName = Request.Cookies["loginInfo"]["username"];
+                    string userName = Request.Cookies["loginInfo"].Value;
 
                     string query = "SELECT position from users WHERE position = '" + userName+ "'";
 
