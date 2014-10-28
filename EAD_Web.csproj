@@ -55,6 +55,7 @@
     <Content Include="AddUser.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="FindUser.aspx" />
+    <Content Include="MangeUser.aspx" />
     <Content Include="SQL_Scripts\ead_sql_query_make_db.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MangeUser.aspx.cs">
+      <DependentUpon>MangeUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MangeUser.aspx.designer.cs">
+      <DependentUpon>MangeUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
