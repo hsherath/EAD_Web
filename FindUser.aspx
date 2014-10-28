@@ -7,7 +7,7 @@
     <form id="form1">
     <div>
         <asp:Label ID="Label1" runat="server" Text="Label">Enter First Name : </asp:Label>
-        <asp:TextBox ID="txtSearch" CssClass="textEntry" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtSearch" CssClass="textEntry" runat="server" MaxLength="10"></asp:TextBox>
         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
     </div>
     <br />
