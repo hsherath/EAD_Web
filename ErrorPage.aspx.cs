@@ -11,7 +11,13 @@ namespace EAD_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String reason = Request.QueryString["reason"];
 
+            if (reason != null && reason.Equals("1"))
+            {
+
+                Label1.Text = "You do not have the permision to perform this action";
+            }
         }
     }
 }

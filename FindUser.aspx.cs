@@ -47,7 +47,7 @@ namespace EAD_Web
 
                     if (!position.ToLower().Equals("manager")) 
                     {
-                        Response.Redirect("~/ErrorPage.aspx");
+                        Response.Redirect("~/ErrorPage.aspx?reason=1");
                     }
                 }
             
@@ -65,7 +65,7 @@ namespace EAD_Web
 
                 SqlConnection con = DBManager.GetSQLConnection();
                 con.Open();
-                String query = "SELECT firstname,lastname,email,primary_address FROM users WHERE firstname='"+inputText+"' ";
+                String query = "SELECT firstname,lastname,email,primary_address FROM users WHERE firstname like '%"+inputText+"%' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader reader = cmd.ExecuteReader();

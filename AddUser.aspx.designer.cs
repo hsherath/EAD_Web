@@ -103,13 +103,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
-        /// msgUserName control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgUserName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// txtPassword control.
@@ -121,13 +121,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// msgPassword control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// txtConfirmPassword control.
@@ -139,13 +139,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
-        /// msgConfirmPassword control.
+        /// CompareValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgConfirmPassword;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// DropDownList1 control.
@@ -166,13 +166,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.Label msgPosition;
         
         /// <summary>
-        /// TextBox9 control.
+        /// txtSalary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtSalary;
         
         /// <summary>
         /// msgSalary control.
@@ -184,13 +184,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.Label msgSalary;
         
         /// <summary>
-        /// TextBox10 control.
+        /// txtNic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtNic;
         
         /// <summary>
         /// msgNIC control.
@@ -202,13 +202,13 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.Label msgNIC;
         
         /// <summary>
-        /// TextBox11 control.
+        /// txtBankAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox txtBankAccount;
         
         /// <summary>
         /// msgAccountNo control.
@@ -220,12 +220,12 @@ namespace EAD_Web {
         protected global::System.Web.UI.WebControls.Label msgAccountNo;
         
         /// <summary>
-        /// Button1 control.
+        /// btnAddUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnAddUser;
     }
 }

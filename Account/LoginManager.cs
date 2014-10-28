@@ -77,6 +77,7 @@ namespace EAD_Web.Account
 
        public void LogOut(HttpSessionState session)
        {
+           session.Clear();
            session.Abandon();
        }
     }

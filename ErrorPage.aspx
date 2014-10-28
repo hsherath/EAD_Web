@@ -4,4 +4,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>
         Error Page</h1>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
