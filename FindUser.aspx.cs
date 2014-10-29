@@ -66,46 +66,54 @@ namespace EAD_Web
                 SqlConnection con = DBManager.GetSQLConnection();
                 con.Open();
                 String query = "SELECT firstname,lastname,email,primary_address FROM users WHERE firstname like '%"+inputText+"%' ";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.CommandType = CommandType.Text;
-                SqlDataReader reader = cmd.ExecuteReader();
-                int columnNo = reader.FieldCount;
-
-                DataTable table = new DataTable();
-                table.Columns.Add("First Name", typeof(string));
-                table.Columns.Add("Last Name", typeof(string));
-                table.Columns.Add("Email", typeof(string));
-                table.Columns.Add("Address", typeof(string));
-
-
-                if (reader.HasRows)
+                try
                 {
-                    do{
-                        while (reader.Read())
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    int columnNo = reader.FieldCount;
+
+                    DataTable table = new DataTable();
+                    table.Columns.Add("First Name", typeof(string));
+                    table.Columns.Add("Last Name", typeof(string));
+                    table.Columns.Add("Email", typeof(string));
+                    table.Columns.Add("Address", typeof(string));
+
+
+                    if (reader.HasRows)
+                    {
+                        do
                         {
-                            DataRow row = table.NewRow();
-                            columnNo = reader.FieldCount;
-                            for (int i = 0; i < columnNo; i++)
+                            while (reader.Read())
                             {
-                                row[i] = reader[i].ToString();
+                                DataRow row = table.NewRow();
+                                columnNo = reader.FieldCount;
+                                for (int i = 0; i < columnNo; i++)
+                                {
+                                    row[i] = reader[i].ToString();
+                                }
+
+                                table.Rows.Add(row);
                             }
+                        } while (reader.NextResult());
 
-                            table.Rows.Add(row);
-                        }
-                    }while(reader.NextResult());
+                        GridView1.Visible = true;
+                        GridView1.DataSource = table;
+                        GridView1.DataBind();
+                        con.Close();
 
-                    GridView1.Visible = true;
-                    GridView1.DataSource = table;
-                    GridView1.DataBind();
-                    con.Close();
-                   
 
+                    }
+                    else
+                    {
+                        msgLabel.Text = "Could not find the details of the entered name.";
+                        GridView1.Visible = false;
+                    }
                 }
-                else 
+                catch (Exception ex)
                 {
-                    msgLabel.Text = "Could not find the details of the entered name.";
-                    GridView1.Visible = false;
-                } 
+                    msgLabel.Text = query+"\n"+ex.StackTrace;
+                }
             }
             else {
 
